@@ -94,8 +94,21 @@ console.log('=====================');
 
 // problem 4
 function password(obj) {
-  let websiteName = obj.siteName;
-  let firstIndex = websiteName[0].toUpperCase();
-  console.log(firstIndex);
+    if(Object.keys(obj).length !== 3){
+        return 'invalid';
+    }
+    if(obj.birthYear.toString().length !== 4){
+      return 'invalid';
+    }
+  const  websiteName = obj.siteName;
+  const  firstIndex = websiteName[0].toUpperCase();
+  const  cuteWebsiteName = websiteName.slice(1);
+  const siteName = firstIndex + cuteWebsiteName;
+  const name = obj.name;
+  const birthYear = obj.birthYear;
+  return `${siteName}#${name}@${birthYear}`
 }
 console.log(password({ name: 'kolimuddin' , birthYear: 1999 , siteName: 'google' }));
+console.log(password({ name: 'rahat' , birthYear: 2002, siteName: 'Facebook' }));
+console.log(password({ name: 'toky' , birthYear: 200, siteName: 'Facebook' }));
+console.log(password({ name: 'maisha' , birthYear: 2002 }));
