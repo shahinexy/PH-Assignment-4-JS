@@ -118,7 +118,7 @@ console.log("==================");
 
 // problem 5
 function monthlySavings(arr, livingCost) {
-  if (!Array.isArray(arr) || typeof livingCost !== 'number') {
+  if (!Array.isArray(arr) || typeof livingCost !== "number") {
     return "invalid input";
   }
   let totalMoney = 0;
@@ -140,6 +140,6 @@ function monthlySavings(arr, livingCost) {
 console.log(monthlySavings([1000, 2000, 3000], 5400));
 console.log(monthlySavings([1000, 2000, 2500], 5000));
 console.log(monthlySavings([900, 2700, 3400], 10000));
-console.log(monthlySavings(100, [ 900 , 2700 , 3400]));
-console.log(monthlySavings([ 900 , 2700 , 3400], '234'));
-console.log(monthlySavings('2043812', ['5000']));
+console.log(monthlySavings(100, [900, 2700, 3400]));
+console.log(monthlySavings([900, 2700, 3400], "234"));
+console.log(monthlySavings("2043812", ["5000"]));
