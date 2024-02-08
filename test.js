@@ -10,6 +10,7 @@ function calculateMoney(ticketSale) {
     return totalTicketPrice - totalCost;
 }
 
+
 function checkName(name) {
     if (typeof name !== "string") {
         return "invalid";
@@ -22,6 +23,7 @@ function checkName(name) {
     }
     return "Bad Name";
 }
+
 
 function deleteInvalids(array) {
     if (!Array.isArray(array)) {
@@ -58,7 +60,6 @@ function password(obj) {
     const birthYear = obj.birthYear;
     return `${siteName}#${name}@${birthYear}`;
 }
-
 
 
 function monthlySavings(arr, livingCost) {
