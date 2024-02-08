@@ -89,26 +89,57 @@ console.log(deleteInvalids(["1", { num: 2 }, NaN]));
 console.log(deleteInvalids({ num: [1, 2, 3] }));
 console.log(deleteInvalids([1, 2, -3]));
 
-
-console.log('=====================');
+console.log("=====================");
 
 // problem 4
 function password(obj) {
-    if(Object.keys(obj).length !== 3){
-        return 'invalid';
-    }
-    if(obj.birthYear.toString().length !== 4){
-      return 'invalid';
-    }
-  const  websiteName = obj.siteName;
-  const  firstIndex = websiteName[0].toUpperCase();
-  const  cuteWebsiteName = websiteName.slice(1);
+  if (Object.keys(obj).length !== 3) {
+    return "invalid";
+  }
+  if (obj.birthYear.toString().length !== 4) {
+    return "invalid";
+  }
+  const websiteName = obj.siteName;
+  const firstIndex = websiteName[0].toUpperCase();
+  const cuteWebsiteName = websiteName.slice(1);
   const siteName = firstIndex + cuteWebsiteName;
   const name = obj.name;
   const birthYear = obj.birthYear;
-  return `${siteName}#${name}@${birthYear}`
+  return `${siteName}#${name}@${birthYear}`;
 }
-console.log(password({ name: 'kolimuddin' , birthYear: 1999 , siteName: 'google' }));
-console.log(password({ name: 'rahat' , birthYear: 2002, siteName: 'Facebook' }));
-console.log(password({ name: 'toky' , birthYear: 200, siteName: 'Facebook' }));
-console.log(password({ name: 'maisha' , birthYear: 2002 }));
+console.log(
+  password({ name: "kolimuddin", birthYear: 1999, siteName: "google" })
+);
+console.log(password({ name: "rahat", birthYear: 2002, siteName: "Facebook" }));
+console.log(password({ name: "toky", birthYear: 200, siteName: "Facebook" }));
+console.log(password({ name: "maisha", birthYear: 2002 }));
+
+console.log("==================");
+
+// problem 5
+function monthlySavings(arr, livingCost) {
+  if (!Array.isArray(arr) || typeof livingCost !== 'number') {
+    return "invalid input";
+  }
+  let totalMoney = 0;
+  for (let element of arr) {
+    if (element >= 3000) {
+      const tax = element - element * (20 / 100);
+      totalMoney += tax;
+    } else {
+      totalMoney += element;
+    }
+  }
+  const savings = totalMoney - livingCost;
+  if (savings >= 0) {
+    return savings;
+  } else {
+    return "earn more";
+  }
+}
+console.log(monthlySavings([1000, 2000, 3000], 5400));
+console.log(monthlySavings([1000, 2000, 2500], 5000));
+console.log(monthlySavings([900, 2700, 3400], 10000));
+console.log(monthlySavings(100, [ 900 , 2700 , 3400]));
+console.log(monthlySavings([ 900 , 2700 , 3400], '234'));
+console.log(monthlySavings('2043812', ['5000']));
